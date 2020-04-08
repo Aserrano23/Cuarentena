@@ -1,0 +1,9 @@
+.content {
+    margin: 2em 0 0 5em;
+    min-height: calc(91vh - 70px);
+}
+
+.footer {
+    background-color: grey;
+    height: 50px;
+}

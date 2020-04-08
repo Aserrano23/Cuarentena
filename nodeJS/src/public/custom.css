@@ -1,0 +1,23 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body li {
+    text-decoration-style: none;
+    list-style: square;
+    color: black;
+}
+
+body a {
+    text-decoration: none;
+    color: black;
+}
+
+body p {
+    margin-left: 2%;
+}
+
+nav {
+    margin: 2em 0 0 5em;
+}
