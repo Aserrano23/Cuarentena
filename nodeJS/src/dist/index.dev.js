@@ -1,28 +1,28 @@
 "use strict";
 
-var express = require("express");
+var _express = _interopRequireDefault(require("express"));
 
-var path = require("path");
+var _path = _interopRequireDefault(require("path"));
 
-var app = express();
+var _router = _interopRequireDefault(require("./router"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+var app = (0, _express["default"])();
 var port = 3000;
 app.disable("x-powered-by");
 app.set("env", "development");
-app.set("views", path.join(__dirname, "views"));
+app.set("views", _path["default"].join(__dirname, "views"));
 app.set("view engine", "pug");
-app.get("/", function (req, res) {
-  res.render('home', {
-    title: "Curso de nodeJS",
-    message: "mi segundo renderizado de plantillas, esta vez von variables"
+app.use('/static', _express["default"]["static"](_path["default"].join(__dirname, "public")));
+(0, _router["default"])(app);
+app.use(function (req, res, next) {
+  res.render("404", {
+    title: "Error",
+    message: "La ruta a la que intentas acceder no existe"
   });
+  next();
 });
-app.get("/article", function (req, res) {
-  res.render('article', {
-    title: "Articulo del curso de nodeJS",
-    message: "Esta es la página del articulo del curso de nodeJS"
-  });
-});
-app.use('/static', express["static"](path.join(__dirname, "public")));
 app.listen(port, function () {
   console.log("Server listen in port ".concat(port));
 });
