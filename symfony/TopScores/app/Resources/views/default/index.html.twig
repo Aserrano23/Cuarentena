@@ -1,0 +1,211 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+  <nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <div class="container">
+      <a class="navbar-brand" href="/">
+        <img src="topscores-logo.png" height="30" />
+      </a>
+      <button id="menu-icon" class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup"
+        aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav" style="margin-left:10%;">
+          <a class="nav-item nav-link" href="#">FOOTBALL</a>
+          <a class="nav-item nav-link" href="#">CRICKET</a>
+          <a class="nav-item nav-link" href="#">BASKETBALL</a>
+          <a class="nav-item nav-link" href="#">GOLF</a>
+        </div>
+      </div>
+      <div id="language">
+      <button class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNavLang"
+        aria-controls="navbarNavAltMarkup"
+        aria-expanded="false"
+        aria-label="Toggle navigation">
+       <i class="fas fa-language"></i>
+      </button>
+        <div class="collapse navbar-collapse" id="navbarNavLang">
+          <div class="navbar-nav" style="margin-left:10%;">
+            <a class="nav-item nav-link active" href="#">English</a>
+            <div class="vertical-separator"></div>
+            <a class="nav-item nav-link" href="#">Arab</a>
+          </div>
+        </div>
+      </div>
+      <div class="all-vertical-separator"></div>
+      <div class="navbar-nav">
+        <a class="nav-item nav-link" id="iconoPerfil" href="#">
+          <i class="far fa-user fa-2x"
+            data-toggle="modal"
+            data-target="#exampleModalCenter">
+          </i>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="modal fade dark"
+    id="exampleModalCenter"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle" style="color:#EB3434;">
+            <img src="topscores-logo.png" height="30">
+          </h5>
+          <button type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="exampleInputEmail1">
+                Email address
+              </label>
+              <input type="email"
+                class="form-control"
+                id="exampleInputEmail1"
+                aria-describedby="emailHelp"
+                placeholder="Enter email">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">
+                Password
+              </label>
+              <input type="password"
+                class="form-control"
+                id="exampleInputPassword1"
+                placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-dark">
+              Submit
+            </button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button"
+            class="btn btn-outline-danger"
+            data-dismiss="modal">
+            Cancel
+          </button>
+          <button type="button" class="btn btn-outline-primary">
+            Log in
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="background">
+    <div id="body" class="container-fluid" height="100%">
+      <div class="row">
+        <div class="col-sm-3">
+          <div id="left-menu">
+            <ul>
+              <li>
+                <a href="#">
+                  <div id="underline-md">
+                    MY TEAMS
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <div id="underline-lg">
+                    MY LEAGUES
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <div id="underline-sm">
+                    COUNTRYS
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-9">
+          <div style="margin-top: 3%; margin-bottom: -1%;">
+            <h1 class="title-background" style="color: #EB3434; line-height:20%">
+              SPORT
+            </h1>
+            <h1 class="title-background" style="color: transparent; -webkit-text-stroke: 2px white;">
+              RESULTS
+            </h1>
+          </div>
+          <button type="button"
+            class="btn btn-outline-danger"
+            style="color: white; font-size: 10pt;">
+            VIEW RESULTS
+          </button>
+          <button type="button"
+            class="btn btn-danger"
+            style="font-size: 10pt; margin-left:2%;">
+            READ MORE
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="container content">
+        <h1>FOOTBALL</h1>
+        <hr class="separator">
+        
+          {% for key, competition in results %}
+            {% if competition.area.ensignUrl is not null and competition.plan == "TIER_ONE"%}
+              <a href="#matches{{ key }}" data-toggle="collapse" data-target="#matches{{ key }}"><h6 style="letter-spacing: 1px;"><img src="{{competition.area.ensignUrl }}" style="border-radius: 10px;" height="10"> <strong>{{ competition.area.name }}:</strong> {{ competition.name }}</h6></a>
+                <div id="matches{{ key }}" class="collapse">
+                  <table>
+                    {% for match in competition.matches %}
+                      {% if match.status == "FINISHED" %}
+                            <tr class="match">
+                                <td>{{ match.date }}</td>
+                                <td>{{ match.time }}</td>
+                                <td>{{ match.homeTeam.name }} - {{ match.awayTeam.name }}</td>
+                                <td>{{ match.score.fullTime.homeTeam }} - {{ match.score.fullTime.awayTeam }}</td>
+                                <td>{{ match.status }}</td>
+                            </tr>
+                      {% else %}
+                            <tr class="match">
+                              <td>{{ match.date }}</td>
+                              <td>{{ match.time }}</td>
+                              <td>{{ match.homeTeam.name }} - {{ match.awayTeam.name }}</td>
+                              <td>{{ match.score.fullTime.homeTeam }} - {{ match.score.fullTime.awayTeam }}</td>
+                              <td>{{ match.status }}</td>
+                            </tr>
+                      {% endif %}
+                    {% endfor %}
+                  </table>
+                </div>
+            {% endif %}
+          {% endfor %}
+      </div>  
+    </div>
+  </div>
+  
+  <!--   
+        
+
+
+       -->
+{% endblock %}
