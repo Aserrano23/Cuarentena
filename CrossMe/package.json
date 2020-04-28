@@ -1,0 +1,21 @@
+{
+  "name": "crossme",
+  "version": "1.0.0",
+  "description": "A crossfit social network",
+  "main": "index.js",
+  "scripts": {
+    "startDev": "nodemon dist/src/index.js",
+    "start": "node dist/src/index.js",
+    "tsc": "tsc"
+  },
+  "author": "adrian serrano castillo",
+  "license": "ISC",
+  "dependencies": {
+    "@types/express": "^4.17.6",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3",
+    "typescript": "^3.8.3"
+  }
+}
