@@ -1,3 +1,32 @@
+@font-face {
+    font-family: "Sarabun";
+    src: url(/static/fonts/SARABUN-BOLD.TTF);
+}
 body {
-    background-color: grey;
+    overflow: hidden;
+    background: url(/static/img/fondo-home.jpg) no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            height: 600px;
+            width: auto;
+}
+a,h1,h2,h3,h4,h5,h6,p{
+    font-size: xx-large;
+    font-family: sarabun;
+}
+a,i,h1,h2,h3,h4,h5,h6,p,span{
+    font-size: x-large;
+    font-family: sarabun;
+}
+.main{
+    margin-top:50px;
+    text-align: center;
+    background-color: white;
+    opacity: 90%;
+}
+.icons-login i,span{
+    color:black;
+    margin-right: 10px;
 }

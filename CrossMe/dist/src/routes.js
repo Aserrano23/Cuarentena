@@ -9,5 +9,9 @@ var routes = function (app) {
         //res.sendFile(path.join(__dirname, "public","templates","home.html"));
         res.render('home');
     });
+    app.get("/prueba", function (req, res) {
+        //res.sendFile(path.join(__dirname, "public","templates","home.html"));
+        res.render('prueba');
+    });
 };
 exports.default = routes;
