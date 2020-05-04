@@ -30,3 +30,13 @@ a,i,h1,h2,h3,h4,h5,h6,p,span{
     color:black;
     margin-right: 10px;
 }
+#login a{
+    padding: 0px; 
+}
+#logo{
+    
+    margin: 0px 170px 0px 50px
+}
+#navbarContent a{
+    padding: 0px 50px 0px 50px;
+}
