@@ -30,6 +30,11 @@ a,i,p,span{
     background-color: white;
     opacity: 90%;
 }
+.text{
+    width: 700px;
+    text-align: center;
+    margin: 20px 0px 20px 205px;
+}
 .icons-login i,span{
     color:black;
     margin-right: 10px;
@@ -41,7 +46,6 @@ a,i,p,span{
 #navbarContent a{
     padding: 0px 50px 0px 50px;
 }
-
 #login a{
     padding: 0px; 
 }
