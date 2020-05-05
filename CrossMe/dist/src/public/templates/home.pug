@@ -32,16 +32,63 @@ html(lang="es")
                         a.nav-link(href='#') Sobre nosotros
                      li.nav-item
                         a.nav-link(href='#') Contacto
-               #login
-                  ul.nav.navbar-nav.navbar-right
-                     li.icons-login
-                        a(href="#")
-                           i.fas.fa-user 
-                           span Sign Up
-                        a(href='#')
-                           i.fas.fa-sign-in-alt  
-                           span Login
+                  #login
+                     ul.nav.navbar-nav.navbar-right
+                        li.icons-login
+                           a(href="#")
+                              i.fas.fa-user 
+                              span(data-toggle='modal' data-target='#signupModal') Sign Up
+                           a(href='#')
+                              i.fas.fa-sign-in-alt  
+                              span(data-toggle='modal' data-target='#loginModal') Login
       .container
+         // Modal de registro
+         #signupModal.modal.fade(tabindex='-1' role='dialog' aria-labelledby='exampleModalCenterTitle' aria-hidden='true')
+            .modal-dialog(role='document')
+               .modal-content
+                  .modal-header.text-center
+                     h4.modal-title.w-100.font-weight-bold Sign up
+                     button.close(type='button' data-dismiss='modal' aria-label='Close')
+                        span(aria-hidden='true') &times;
+                  .modal-body.mx-3
+                     .md-form.mb-1
+                        p
+                           i.fas.fa-user.prefix.grey-text
+                           |  Nombre de usuario 
+                           input#orangeForm-name.form-control.validate(type='text')
+                     .md-form.mb-1
+                        p
+                           i.fas.fa-envelope.prefix.grey-text
+                           |  Email
+                           input#orangeForm-email.form-control.validate(type='email')
+                     .md-form.mb-1
+                        p
+                           i.fas.fa-lock.prefix.grey-text
+                           |  Contrase&ntilde;a
+                           input#orangeForm-pass.form-control.validate(type='password')
+                  .modal-footer.d-flex.justify-content-center
+                     button.btn.btn-deep-orange Sign up
+         // Modal de inicio de sesion
+         #loginModal.modal.fade(tabindex='-1' role='dialog' aria-labelledby='exampleModalCenterTitle' aria-hidden='true')
+            .modal-dialog(role='document')
+               .modal-content
+                  .modal-header.text-center
+                     h4.modal-title.w-100.font-weight-bold Log in
+                     button.close(type='button' data-dismiss='modal' aria-label='Close')
+                        span(aria-hidden='true') &times;
+                  .modal-body.mx-3
+                     .md-form.mb-1
+                        p
+                           i.fas.fa-user.prefix.grey-text
+                           |  Nombre de usuario 
+                           input#orangeForm-name.form-control.validate(type='text')
+                     .md-form.mb-1
+                        p
+                           i.fas.fa-lock.prefix.grey-text
+                           |  Contraseña
+                           input#orangeForm-pass.form-control.validate(type='password')
+                  .modal-footer.d-flex.justify-content-center
+                     button.btn.btn-ligth Log in
          .main
             h1 CrossMe
             p La mejor red social de crossfit      

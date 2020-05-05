@@ -1,6 +1,10 @@
 @font-face {
+    font-family: "SarabunBold";
+    src: url(/static/fonts/Sarabun-Bold.ttf);
+}
+@font-face {
     font-family: "Sarabun";
-    src: url(/static/fonts/SARABUN-BOLD.TTF);
+    src: url(/static/fonts/Sarabun-Light.ttf);
 }
 body {
     overflow: hidden;
@@ -12,12 +16,12 @@ body {
             height: 600px;
             width: auto;
 }
-a,h1,h2,h3,h4,h5,h6,p{
-    font-size: xx-large;
-    font-family: sarabun;
-}
-a,i,h1,h2,h3,h4,h5,h6,p,span{
+h1,h2,h3,h4,h5,h6{
     font-size: x-large;
+    font-family: sarabunBold;
+}
+a,i,p,span{
+    font-size: large;
     font-family: sarabun;
 }
 .main{
@@ -30,13 +34,24 @@ a,i,h1,h2,h3,h4,h5,h6,p,span{
     color:black;
     margin-right: 10px;
 }
-#login a{
-    padding: 0px; 
-}
 #logo{
     
-    margin: 0px 170px 0px 50px
+    margin: 0px 170px 0px 0px
 }
 #navbarContent a{
     padding: 0px 50px 0px 50px;
+}
+
+#login a{
+    padding: 0px; 
+}
+@media (max-width: 1050px) {
+    #logo{
+        margin: 0px 80px 0px 0px
+    }
+}
+@media (max-width: 320px) {
+    #logo{
+        margin: 0px 0px 0px 0px
+    }
 }
