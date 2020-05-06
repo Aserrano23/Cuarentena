@@ -7,21 +7,19 @@
     src: url(/static/fonts/Sarabun-Light.ttf);
 }
 body {
-    overflow: hidden;
+    overflow-x: hidden;
     background: url(/static/img/fondo-home.jpg) no-repeat center center fixed;
             -webkit-background-size: cover;
             -moz-background-size: cover;
             -o-background-size: cover;
             background-size: cover;
-            height: 600px;
-            width: auto;
 }
 h1,h2,h3,h4,h5,h6{
-    font-size: x-large;
+    font-size: 2vh;
     font-family: sarabunBold;
 }
 a,i,p,span{
-    font-size: large;
+    font-size: 2vh;
     font-family: sarabun;
 }
 .main{
@@ -31,10 +29,15 @@ a,i,p,span{
     opacity: 90%;
 }
 .text{
-    width: 700px;
+    width: 60%;
     text-align: center;
-    margin: 20px 0px 20px 205px;
+    margin-left:20%;
+    margin-top:10px;
 }
+.img-responsive {
+    width: 60%;
+    height: auto;
+  }
 .icons-login i,span{
     color:black;
     margin-right: 10px;
