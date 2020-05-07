@@ -7,10 +7,25 @@ html(lang="es")
         include includes/login-modals.pug
         .main
             h1 CrossMe
+            h4 Como contactarnos?
             br
-            h4 Quiénes somos?
+            p Puedes contactar con nostros mediante el siguiente formulario, cuéntanos, estaremos encantados de atenderte.
             br
-            img.img-responsive(src="static/img/foto1.jpg", alt="foto ejercicio crossfit" width="500")
-            .text 
-                p CrossMe es un red social para TODO EL MUNDO desde los crossfitters más experimentados hasta para esas personas que están interesadas en empezar en este deporte, es muy recomendable usar CrossMe si estás empezando porque estarás en contacto con coaches que pueden resolverte dudas y conocer personas más veteranas en este deporte con las que poder hablar, compartir inquietudes y aprender a la vez que haces nuevas amistades.
-            br
+            .row
+                .col-sm-5(style="text-align:left; margin: 0px 5% 0px 5%;")
+                    form(action="", method="post")
+                        p
+                            |*Como te llamas?  
+                            input.form-control(type="text", name="name" placeholder="Ej. Antonio Pérez" require)
+                        p
+                            |*Un correo para responderte? 
+                            input.form-control(type="email", name="email" placeholder="Ej. antonio@mail.com" require)
+                        p
+                            |*Que quieres contarnos?
+                            p
+                                textarea.form-control(name="question", cols="43", rows="10" placeholder="Escribe algo aquí..." require)
+                        p
+                            input(type="submit", value="Enviar")
+                            input(type="reset", value="Borrar")
+                .col-sm-5
+                    img.logo-contacto.img-responsive(src="static/img/logo-letra_negro.png", width="500" alt="logo-solo-letras")

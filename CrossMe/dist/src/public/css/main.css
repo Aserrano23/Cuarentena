@@ -24,6 +24,7 @@ a,i,p,span{
 }
 .main{
     margin-top:50px;
+    margin-bottom: 50px;
     text-align: center;
     background-color: white;
     opacity: 90%;
@@ -42,8 +43,7 @@ a,i,p,span{
     color:black;
     margin-right: 10px;
 }
-#logo{
-    
+#logo{ 
     margin: 0px 170px 0px 0px
 }
 #navbarContent a{
@@ -52,13 +52,19 @@ a,i,p,span{
 #login a{
     padding: 0px; 
 }
+.logo-contacto{
+    margin-top: 150px; 
+}
 @media (max-width: 1050px) {
     #logo{
         margin: 0px 80px 0px 0px
     }
 }
-@media (max-width: 320px) {
+@media (max-width: 576px) {
     #logo{
         margin: 0px 0px 0px 0px
+    }
+    .logo-contacto{
+        display: none;
     }
 }
