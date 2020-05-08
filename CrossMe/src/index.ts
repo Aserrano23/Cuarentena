@@ -1,11 +1,12 @@
 import express from 'express'
 import routes from './routes'
 import path from 'path'
+import cookieParser from 'cookie-parser'
 
 const app = express()
 let port = 3000
 
-//app.use(express.static(__dirname + '/public/'))
+app.use(cookieParser)
 app.use('/static', express.static(__dirname + '/public'));
 
 routes(app)
