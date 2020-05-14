@@ -1,0 +1,36 @@
+doctype html
+html(lang="es")
+   include includes/header.pug
+   body
+      include includes/nav.pug
+      .container
+         include includes/login-modals.pug
+         .main
+            h4 Sign up
+            form(action="/adduser", method="post")
+                .md-form.mb-1
+                    p
+                        i.fas.fa-user.prefix
+                        |  Nombre de usuario 
+                        input#orangeForm-name.form-control.validate(type='text' name='username')
+                .md-form.mb-1
+                    p
+                        i.fas.fa-envelope.prefix
+                        |  Email
+                        input#orangeForm-email.form-control.validate(type='email' name='email')
+                .md-form.mb-1
+                    p
+                        i.fas.fa-lock.prefix
+                        |  Contraseña
+                        input#orangeForm-pass.form-control.validate(type='password' name='password')
+                .md-form.mb-1
+                    p
+                        i.fas.fa-question-circle
+                        |   Que eres?
+                        p 
+                            input(type="radio", name="role", value="coach", checked=role=="coach")
+                            |   Entrenador  
+                        p  
+                            input(type="radio", name="role", value="athlete", checked=role=="athlete")
+                            |   Atleta
+                button.btn.btn-deep-orange Sign up

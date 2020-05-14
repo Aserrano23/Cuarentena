@@ -1,0 +1,28 @@
+doctype html
+html(lang="es")
+   include includes/header.pug
+   body
+      include includes/nav.pug
+      .container
+         include includes/login-modals.pug
+         .main
+            #loginModal.modal.fade(tabindex='-1' role='dialog' aria-labelledby='exampleModalCenterTitle' aria-hidden='true')
+                .modal-dialog(role='document')
+                    .modal-content
+                        .modal-header.text-center
+                            h4.modal-title.w-100.font-weight-bold Log in
+                            button.close(type='button' data-dismiss='modal' aria-label='Close')
+                                span(aria-hidden='true') &times;
+                        .modal-body.mx-3
+                            .md-form.mb-1
+                                p
+                                    i.fas.fa-user.prefix.grey-text
+                                    |  Nombre de usuario 
+                                    input#orangeForm-name.form-control.validate(type='text')
+                            .md-form.mb-1
+                                p
+                                    i.fas.fa-lock.prefix.grey-text
+                                    |  Contraseña
+                                    input#orangeForm-pass.form-control.validate(type='password')
+                        .modal-footer.d-flex.justify-content-center
+                            button.btn.btn-ligth Log in
