@@ -41,8 +41,5 @@ var routes = function (app) {
     app.get('/login', function (req, res) {
         res.render('login');
     });
-    app.get('/infouser', function (req, res) {
-        res.send(User.find());
-    });
 };
 exports.default = routes;
