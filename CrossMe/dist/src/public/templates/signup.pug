@@ -7,7 +7,8 @@ html(lang="es")
          include includes/login-modals.pug
          .main
             h4 Sign up
-            form(action="/adduser", method="post")
+            form(action="/signup", method="post")
+                h4 #{status}
                 .md-form.mb-1
                     p
                         i.fas.fa-user.prefix
