@@ -6,7 +6,8 @@ html(lang="es")
       .container
         include includes/login-modals.pug
         .main
-            h1 CrossMe
+            h1 Cross
+               span(style="color:red; font-size: 4.5vh; font-family: sarabunBold;") Me
             h4 Como contactarnos?
             br
             p Puedes contactar con nostros mediante el siguiente formulario, cuéntanos, estaremos encantados de atenderte.
@@ -25,7 +26,7 @@ html(lang="es")
                             p
                                 textarea.form-control(name="question", cols="43", rows="10" placeholder="Escribe algo aquí..." require)
                         p
-                            input(type="submit", value="Enviar")
-                            input(type="reset", value="Borrar")
+                            input.btn.btn-danger(type="submit", value="Enviar")
+                            input.btn.btn-dark(type="reset", value="Borrar" style="margin-left:10px;")
                 .col-sm-5
                     img.logo-contacto.img-responsive(src="static/img/logo-letra_negro.png", width="500" alt="logo-solo-letras")

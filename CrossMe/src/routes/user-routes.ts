@@ -8,9 +8,10 @@ const routes = app => {
         res.render('signup')
     })
     app.post('/signup', userCtrl.signup)
-    app.get('/signin', (req:Request, res:Response) => {
-        res.render('signin')
+    app.get('/login', (req:Request, res:Response) => {
+        res.render('login')
     })
+    app.get('/login', userCtrl.login)
 }
 
 export default routes

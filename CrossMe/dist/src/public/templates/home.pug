@@ -6,7 +6,10 @@ html(lang="es")
       .container
          include includes/login-modals.pug
          .main
-            h1 CrossMe
+            each msg in messages ? messages : []
+               p.alert.alert-success #{msg}
+            h1 Cross
+               span(style="color:red; font-size: 4.5vh; font-family: sarabunBold;") Me
             br
             img.img-responsive(src="static/img/foto1.jpg", alt="foto ejercicio crossfit" width="500")
             .text 

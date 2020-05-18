@@ -39,9 +39,13 @@ a,i,p,span{
     width: 60%;
     height: auto;
   }
-.icons-login i,span{
+.icons-login a{
     color:black;
-    margin-right: 10px;
+    margin-right: 5px;
+}
+.icons-login a:hover{
+    color:grey;
+    text-decoration: none;
 }
 #logo{ 
     margin: 0px 170px 0px 0px
@@ -51,6 +55,11 @@ a,i,p,span{
 }
 #login a{
     padding: 0px; 
+}
+#role{
+    text-align:left;
+    width: 150px;
+    margin-left: 510px;
 }
 .logo-contacto{
     margin-top: 150px; 

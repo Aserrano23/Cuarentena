@@ -11,8 +11,9 @@ var routes = function (app) {
         res.render('signup');
     });
     app.post('/signup', user_controller_1.default.signup);
-    app.get('/signin', function (req, res) {
-        res.render('signin');
+    app.get('/login', function (req, res) {
+        res.render('login');
     });
+    app.get('/login', user_controller_1.default.login);
 };
 exports.default = routes;

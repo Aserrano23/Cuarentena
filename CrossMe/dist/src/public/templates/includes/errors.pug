@@ -1,0 +1,5 @@
+if errors
+    .alert.alert-danger
+        ul
+            each err in errors ? errors : []
+                li #{err.text}
