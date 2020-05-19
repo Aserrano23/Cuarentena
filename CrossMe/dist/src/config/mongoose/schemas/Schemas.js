@@ -7,8 +7,8 @@ var index_1 = __importDefault(require("../index"));
 var Schema = index_1.default.Schema;
 var schemas = {
     userSchema: new Schema({
-        username: { type: String },
-        email: { type: String },
+        username: { type: String, unique: true },
+        email: { type: String, unique: true },
         password: { type: String },
         role: {
             type: String,

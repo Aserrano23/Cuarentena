@@ -7,7 +7,7 @@ let BCRYPT_SALT_ROUNDS:number = 12;
 
 const userCtrl = {
 
-    signup: (req:Request, res:Response, next) => {
+    signup: async (req:Request, res:Response, next) => {
         const errors:any[] = []
         const messages:any[] = []
         const {username, email, password, confirmPassword, role} = req.body
@@ -20,20 +20,36 @@ const userCtrl = {
         }
         if (errors.length > 0) {
             res.render('signup', {
-                errors
+                errors,
+                username,
+                email
             })
         } else {
-            bcrypt.hash(password, BCRYPT_SALT_ROUNDS)
+            /*bcrypt.hash(password, BCRYPT_SALT_ROUNDS)
             .then((hashedPassword) => {
-                let user = new User({
-                    username: username,
-                    email: email,
-                    password: hashedPassword,
-                    role:role
+                const newUser = new User({username, email, hashedPassword, role})
+                await newUser.save()
+            })*/
+            const emailUser = await User.findOne({email: email})
+            const usernameUser = await User.findOne({username: username})
+
+            if (emailUser) {
+                errors.push({text: 'El email ya está en uso'})
+                res.render('signup', {
+                    errors
                 })
-                user.save()
-            })
-            res.redirect('home')
+            } else {
+                if (usernameUser) {
+                    errors.push({text: 'El nombre de usuario ya existe'})
+                    res.render('signup', {
+                        errors
+                    })
+                } else {
+                    const newUser = new User({username, email, password, role})
+                    await newUser.save()
+                    res.redirect('login')
+                }
+            }
         }
         
     },

@@ -6,35 +6,40 @@ html(lang="es")
       .container
          .main
             include includes/errors.pug
-            h4 Sign 
-                span(style="color:red; font-size: 2.5vh; font-family: sarabunBold;") up
-            br
-            form(action="/signup", method="post")
-                p
-                    i.fas.fa-user.prefix
-                    |  Nombre de usuario 
-                    input(type='text' name='username' size="20" required)
-                p
-                    i.fas.fa-envelope.prefix
-                    | Email 
-                    input(type='email' name='email' size="31" required)
-                p
-                    i.fas.fa-lock.prefix
-                    |  Contraseña 
-                    input(type='password' name='password' size="26" required)
-                p
-                    i.fas.fa-lock.prefix
-                    |  Confirma la contraseña 
-                    input(type='password' name='confirmPassword' size="16" required)
-                p
-                    i.fas.fa-question-circle
-                    |   Que eres? 
-                    div#role
-                        p 
-                            input(type="radio", name="role", value="coach", checked=role=="coach" required)
-                            |   Entrenador
+            .row
+                .col.sm-6
+                    span(style="color:black; font-size: 2.5vh; font-family: sarabunBold;") Sign 
+                        span(style="color:red; font-size: 2.5vh; font-family: sarabunBold;") up
+                        br
+                        br
+            .row
+                .col.sm-6
+                    form(action="/signup", method="post")
                         p
-                            input(type="radio", name="role", value="athlete", checked=role=="athlete" required)
-                            |   Atleta
-                button.btn.btn-danger(type="submit" style="margin:0px 10px 10px 0px;") Sign up
-                button.btn.btn-dark(type="reset" style="margin-bottom:10px;") Clear
+                            i.fas.fa-user.prefix
+                            |  Nombre de usuario 
+                            input(type='text' name='username' size='20' value=username required)
+                        p
+                            i.fas.fa-envelope.prefix
+                            | Email 
+                            input(type='email' name='email' size='31' value=email required)
+                        p
+                            i.fas.fa-lock.prefix
+                            |  Contraseña 
+                            input(type='password' name='password' size='26' required)
+                        p
+                            i.fas.fa-lock.prefix
+                            |  Confirma la contraseña 
+                            input(type='password' name='confirmPassword' size='16' required)
+                        p
+                            i.fas.fa-question-circle
+                            |   Que eres? 
+                            div#role
+                                p 
+                                    input(type="radio", name="role", value="coach", required)
+                                    |   Entrenador
+                                p
+                                    input(type="radio", name="role", value="athlete", required)
+                                    |   Atleta
+                        button.btn.btn-danger(type="submit" style="margin:0px 10px 10px 0px;") Sign up
+                        button.btn.btn-dark(type="reset" style="margin-bottom:10px;") Clear

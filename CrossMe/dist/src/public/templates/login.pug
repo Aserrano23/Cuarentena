@@ -4,20 +4,23 @@ html(lang="es")
    body
       include includes/nav.pug
       .container
-         include includes/login-modals.pug
          .main
-         .main
-            h4 Log 
-                span(style="color:red; font-size: 2.5vh; font-family: sarabunBold;") in
-            br
-            form(action="/signin", method="post")
-                p
-                    i.fas.fa-user.prefix
-                    |  Nombre de usuario 
-                    input(type='text' name='username' size="20")
-                p
-                    i.fas.fa-lock.prefix
-                    |  Contraseña 
-                    input(type='password' name='password' size="26")
-                button.btn.btn-danger(type="submit" style="margin:0px 10px 10px 0px;") Log in
-                button.btn.btn-dark(type="reset" style="margin-bottom:10px;") Clear
+            .row
+                .col.sm-6
+                    span(style="color:black; font-size: 2.5vh; font-family: sarabunBold;") Sign 
+                        span(style="color:red; font-size: 2.5vh; font-family: sarabunBold;") up
+                        br
+                        br
+            .row
+                .col.sm-6
+                    form(action="/signin", method="post")
+                        p
+                            i.fas.fa-user.prefix
+                            |  Nombre de usuario 
+                            input(type='text' name='username' size="20")
+                        p
+                            i.fas.fa-lock.prefix
+                            |  Contraseña 
+                            input(type='password' name='password' size="26")
+                        button.btn.btn-danger(type="submit" style="margin:0px 10px 10px 0px;") Log in
+                        button.btn.btn-dark(type="reset" style="margin-bottom:10px;") Clear
